@@ -26,7 +26,6 @@ class PatientResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-
                 Forms\Components\Select::make('type')
                     ->options([
                         'cat' => 'Cat',
@@ -34,11 +33,9 @@ class PatientResource extends Resource
                         'rabbit' => 'Rabbit',
                     ])
                     ->required(),
-
                 Forms\Components\DatePicker::make('date_of_birth')
                     ->required()
                     ->maxDate(now()),
-                
                 Forms\Components\Select::make('owner_id')
                     ->relationship('owner', 'name')
                     ->searchable()
